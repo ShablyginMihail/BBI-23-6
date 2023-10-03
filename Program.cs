@@ -40,7 +40,6 @@ namespace ConsoleApp3
                 Console.WriteLine(s);
                 Console.WriteLine(y);
                 Console.WriteLine();
-                x += h;
                 s = 0;
             }
 
