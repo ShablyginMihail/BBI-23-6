@@ -1,51 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace ConsoleApp3
 {
-    class Program
+    class L3N7
     {
-        static int fact(int n)
-        {
-            int f = 1;
-            for (int i = 2; i <= n; ++i)
-            {
-                f *= i;
-            }
-            return f;
-        }
         static void Main(string[] args)
         {
             double a = 0.1;
             double b = 1;
             double lim = 0.0001;
             double h = 0.05;
-            int i = 0;
-            double x = a;
             double y;
             double s = 0;
 
-            while (true)
+            for (double x = a; x <= b; x += h)
             {
-                double elm = Math.Pow(x, 2 * i) / fact(2 * i);
-                if (elm < lim)
+                int i = 0;
+                while (true)
                 {
-                    y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, -x)) / 2;
-                    break;
+                    double elm;
+                    double pow = 1, fact = 1;
+                    for (int c = 1; c <= 2 * i; c++)
+                    {
+                        pow *= x;
+                        fact *= c;
+                    }
+                    elm = pow / fact;
+                    if (elm < lim)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        s += elm;
+                    }
+                    i++;
                 }
-                else
-                {
-                    s += elm;
-                }
+                y = (Math.Pow(Math.E, x) + Math.Pow(Math.E, -x)) / 2;
+                Console.WriteLine(s);
+                Console.WriteLine(y);
+                Console.WriteLine();
                 x += h;
-                i++;
+                s = 0;
             }
 
-            Console.WriteLine(s);
-            Console.WriteLine(y);
         }
             
     }
