@@ -55,22 +55,20 @@ namespace ConsoleApp1
             n--;
             Console.WriteLine($"{n:d}");
             #endregion
-            #region 4            double sum = 0;
-            double x = 0.9;
-            double last_sum = 0;
-            for (int n = 1; n <= 10000; n++)
+            #region 4
+            double sum = 0;
+            double x = Double.Parse(Console.ReadLine());
+            double pow = 1;
+            while (true)
             {
-                sum += Math.Pow(x, n * 2);
-                if (Math.Pow(x, n * 2) >= 0.0001)
+                sum += pow;
+                pow *= x * x;
+                if (pow <= 0.0001)
                 {
-                    last_sum = sum;
-                }
-
-                if (Math.Pow(x, n * 2) < 0.0001)
-                {
-                    Console.WriteLine(last_sum);
                     break;
                 }
+            }
+            Console.WriteLine(sum);
             #endregion
             #region 5            double res = 0;
             int n = Convert.ToInt32(Console.ReadLine());
