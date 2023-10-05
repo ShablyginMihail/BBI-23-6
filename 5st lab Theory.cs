@@ -106,7 +106,7 @@ namespace _5th_Lab
         static bool Compare(int left, int right) => left > right; // => it is lambda operator the same as { return }
         static bool Compare(double left, double right) => left > right;
 
-        static void Main(string[] args)
+        void Main(string[] args)
         {
 
             Console.WriteLine("Delegate example 1");

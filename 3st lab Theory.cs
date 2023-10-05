@@ -4,7 +4,7 @@ namespace _3rd_Lab
 {
     class Theory
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Collections Theory
             /* Array - static (restricted) massive of data in the memory. If we want to extend it, we should create a new array and copy existing data there.
@@ -42,7 +42,7 @@ namespace _3rd_Lab
             int[] oneDimension = new int[1000000]; // row with a 1 million if zeros
             double[] oneDimensionInitializedArray; // undefined array
             int[,] twoDimension = new int[1000, 1000]; // matrix 1000 x 1000, filled by zeros
-            string[,,] threeDimension = new string[5, 10, 255]; 
+            string[,,] threeDimension = new string[5, 10, 255];
             // 5 rows, 10 columns and 255 elements in the column. Each element can contain a string (so it 4-th dimension array actually)
 
             int[][] notSquarMatrix = new int[15][]; // array where each element contain an array (different or equal lengths) -> [ [0,1,2,3,4] , [10,25] , [8] ];
@@ -51,7 +51,7 @@ namespace _3rd_Lab
 
             // Access to element:
 
-            threeDimension[threeDimension.Length-1, 0, threeDimension.GetLength(2)-1] = "I am the latest element here!"; 
+            threeDimension[threeDimension.Length - 1, 0, threeDimension.GetLength(2) - 1] = "I am the latest element here!";
             // do not forget that start with 0 and end with Length-1!
 
 
@@ -63,52 +63,27 @@ namespace _3rd_Lab
             // LinkedList is used seldom
 
             #endregion
-                
+
             #region Tuples
 
             //It is linked links to several variables in the fixed order:
             (string name, int age, double height) student = ("Vasiliy", 20, 1.89);
-            (int[] marks, int average) table = ({1,2,3,4,5}, 3);.
+            (int[] marks, int average) table = (new int[] { 1,2,3,4,5}, 3);
                 
             string Name = student.name; // or student.Item1
-            
-            var tuple = (count:5, sum:10);
+
+            var tuple = (count: 5, sum: 10);
             Console.WriteLine(tuple.count); // 5
             Console.WriteLine(tuple.sum); // 10
-            
+
             // It is the simpliest structure of data (not an array!)
             #endregion
-           
-            #region Enum
 
-            //It is order of integers (Int 8 / 16 / 32 / 64) where you create a list of names and each name get the value (increment by 1 of previous):              
-            enum Marks
-            {
-                Bad = 2,
-                Nice, // auto-incremented to 3
-                Good, // 4 ...
-                Excellent // not coma at the end!
-            }
-            
-            enum Classes
-            {
-                Math = 1,
-                PhysicalCulture = 3, // Jump over
-                History = 4,
-                Dinner = 2 // Instead Informatics
-            }
-            
+
             int myAvgMark = (int)Marks.Bad + (int)Marks.Excellent; // cast to int!
             Console.WriteLine((Classes)10); // expancion to enum values
-            
-            public enum Season
-            {
-                Spring,
-                Summer,
-                Autumn,
-                Winter
-            }
-            
+
+
             Season a = Season.Autumn;
             Console.WriteLine($"Integral value of {a} is {(int)a}");  // output: Integral value of Autumn is 2
 
@@ -117,9 +92,35 @@ namespace _3rd_Lab
 
             var c = (Season)4;
             Console.WriteLine(c);  // output: 4
-            
-            // More informative than variables, more flexible than constans, more strict than string, more effective than dictionary :) cool thing!
-            #endregion       
+
         }
     }
+
+    #region Enum
+
+    //It is order of integers (Int 8 / 16 / 32 / 64) where you create a list of names and each name get the value (increment by 1 of previous):              
+    enum Marks
+    {
+        Bad = 2,
+        Nice, // auto-incremented to 3
+        Good, // 4 ...
+        Excellent // not coma at the end!
+    }
+
+    enum Classes
+    {
+        Math = 1,
+        PhysicalCulture = 3, // Jump over
+        History = 4,
+        Dinner = 2 // Instead Informatics
+    }
+    public enum Season
+    {
+        Spring,
+        Summer,
+        Autumn,
+        Winter
+    }
+    // More informative than variables, more flexible than constans, more strict than string, more effective than dictionary :) cool thing!
+    #endregion
 }

@@ -29,7 +29,7 @@ namespace _4th_Lab
                 }
             }
         }
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Difference between array and matrix
             // Init array with random and show it as a matrix

@@ -4,7 +4,7 @@ namespace _1st_Lab
 {
     class Program
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Booleans
             bool truth = true, failure;

@@ -4,7 +4,7 @@ namespace _2nd_Lab
 {
     class Theory
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Booleans Logic
             bool truth = true, failure; // can have only 2 values

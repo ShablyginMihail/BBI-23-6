@@ -4,7 +4,7 @@ namespace _1st_Lesson
 {
     class Program
     {
-        static void Main(string[] args)
+        void Main(string[] args)
         {
             #region Integers
             int a, b = 5;
@@ -59,17 +59,13 @@ namespace _1st_Lesson
  
                 
             #region Booleans
-            bool t = true, f;
-            f = false;
-            t = 5 > 2;
-            t = (1 == 0) || ((1 > 0) && true);
-            f = !t;
+            bool good = true, bad;
+            bad = false;
+            good = 5 > 2;
+            good = (1 == 0) || ((1 > 0) && true);
+            bad = !good;
 
-            Console.WriteLine($"True is {t,10}. false is {f,-10}"); 
-            #endregion
-
-            Console.WriteLine($"Zero is " + digit); 
-            // тут идет преобразование символа в строку, так как строка - это набор символов
+            Console.WriteLine($"True is {good,10}. false is {f,-10}"); 
             #endregion
 
             #region Casting and type conversion
@@ -155,8 +151,8 @@ namespace _1st_Lesson
             #endregion
 
             #region Second example
-            // Find the value of f(x) when x is...
-            // f(x) = 25.3x + lg(4|x|+50) - exp^(x/100)
+            // Find the value of bad(x) when x is...
+            // bad(x) = 25.3x + lg(4|x|+50) - exp^(x/100)
             Console.WriteLine("Type the integer x");
             if(Int32.TryParse(Console.ReadLine(), out int x))
             { 
