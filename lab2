@@ -1,0 +1,362 @@
+#region 1.1
+    double x = Double.Parse(Console.ReadLine());
+    double y = Double.Parse(Console.ReadLine());
+    double r = Double.Parse(Console.ReadLine());
+    if (Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)) == r)
+    {
+        Console.WriteLine("Точка лежит на окружности");
+    }
+    else
+    {
+        Console.WriteLine("1) Точка не лежит на окружности");
+    }
+#endregion
+
+#region 1.2
+    double x = Double.Parse(Console.ReadLine());
+    double y = Double.Parse(Console.ReadLine());
+    if (y >= 0 & y + Math.Abs(x) <= 1)
+    {
+        Console.WriteLine("Точка лежит внутри треугольника");
+    }
+    else
+    {
+        Console.WriteLine("Точка лежит вне треугольника");
+    }
+#endregion
+
+#region 1.3
+double a = Double.Parse(Console.ReadLine());
+    double b = Double.Parse(Console.ReadLine());
+    double c;
+    if (a > 0)
+    {
+        if (a > b)
+        {
+            c = a;
+        }
+        else
+        {
+            c = b;
+        }
+    }
+    else
+    {
+        if (a < b)
+        {
+            c = a;
+        }
+        else
+        {
+            c = b;
+        }
+    }
+    Console.WriteLine();
+    Console.WriteLine(c);
+#endregion
+
+#region 1.4
+    double a = Double.Parse(Console.ReadLine());
+    double b = Double.Parse(Console.ReadLine());
+    double c = Double.Parse(Console.ReadLine());
+    double min, z;
+    if (a < b)
+    {
+        min = a;   
+    }
+    else
+    {
+        min = b;
+    }
+    if (c > min)
+    {
+        z = c;
+    }
+    else
+    {
+        z = min;
+    }
+    Console.WriteLine();
+    Console.WriteLine(z);
+#endregion
+
+#region 1.5
+    double r = Double.Parse(Console.ReadLine());
+    double s = Double.Parse(Console.ReadLine());
+    if (Math.Sqrt(s * 2) <= 2 * Math.Sqrt(r / Math.PI))
+    {
+        Console.WriteLine("Квадрат поместится в круге");
+    }
+    else
+    {
+        Console.WriteLine("Квадрат не поместится в круге");
+    }
+#endregion
+
+#region 1.6
+    double r = Double.Parse(Console.ReadLine());
+    double s = Double.Parse(Console.ReadLine());
+    if (Math.Sqrt(s) >= 2 * Math.Sqrt(r / Math.PI))
+    {
+        Console.WriteLine("Круг поместится в квадрате");
+    }
+    else
+    {
+        Console.WriteLine("Круг не поместится в квадрате");
+    }
+#endregion
+
+#region 1.7
+    double x = Math.Abs(Double.Parse(Console.ReadLine()));
+    double y;
+    if (x > 1)
+    {
+        y = 1;
+    }
+    else
+    {
+        y = x;
+    }
+    Console.WriteLine();
+    Console.WriteLine(y);
+#endregion
+
+#region 1.8
+    double x = Math.Abs(Double.Parse(Console.ReadLine()));
+    double y;
+    if (x > 1)
+    {
+        y = 0;
+    }
+    else
+    {
+        y = x * x - 1;
+    }
+    Console.WriteLine();
+    Console.WriteLine(y);
+#endregion
+
+#region 1.9
+    double x = Double.Parse(Console.ReadLine());
+    double y;
+    if (x <= -1)
+    {
+        y = 0;
+    }
+    else if (x > 0)
+    {
+        y = 1;
+    }
+    else
+    {
+        y = 1 + x;
+    }
+    Console.WriteLine();
+    Console.WriteLine(y);
+#endregion
+
+
+#region 2.1
+    int n = Int32.Parse(Console.ReadLine());
+    double sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += Double.Parse(Console.ReadLine());
+    }
+    Console.WriteLine();
+    Console.WriteLine("Средний рост: " + sum / n);
+#endregion
+
+#region 2.2
+    int n = Int32.Parse(Console.ReadLine());
+    double r = Double.Parse(Console.ReadLine());
+    Console.WriteLine();
+    int k = 0;
+    double x, y;
+    for (int i = 0; i < n; i++)
+    {
+       x = Double.Parse(Console.ReadLine());
+       y = Double.Parse(Console.ReadLine());
+       Console.WriteLine();
+       if (Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)) <= r)
+       {
+           k++;
+       }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Точек, попавших в круг: " + k);
+#endregion
+
+#region 2.3
+    int n = Int32.Parse(Console.ReadLine());
+    Console.WriteLine();
+    double w, l = 0;
+    for (int i = 0; i < n; i++)
+    {
+       w = Double.Parse(Console.ReadLine());
+       if (w < 30) 
+       {
+           l += 0.2;
+       }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Потребуется " + l + " л молока");
+#endregion
+
+#region 2.4
+    int n = Int32.Parse(Console.ReadLine());
+    double r1 = Double.Parse(Console.ReadLine());
+    double r2 = Double.Parse(Console.ReadLine());
+    Console.WriteLine();
+    int k = 0;
+    double x, y, pos;
+    for (int i = 0; i < n; i++)
+    {
+       x = Double.Parse(Console.ReadLine());
+       y = Double.Parse(Console.ReadLine());
+       Console.WriteLine();
+       pos = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+       if (pos >= r1 & pos <= r2) 
+       {
+           k++;
+       }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Точек, попавших в кольцо: " + k);
+#endregion
+
+#region 2.5
+    double norm = Double.Parse(Console.ReadLine());
+    Console.WriteLine();
+    double t;
+    int k = 0;
+    for (int i = 0; i < 30; i++)
+    {
+       t = Double.Parse(Console.ReadLine());
+       if (t <= norm) 
+       {
+           k++;
+       }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Выполнили норматив: " + k);
+#endregion
+
+#region 2.6
+    int n = Int32.Parse(Console.ReadLine());
+    Console.WriteLine();
+    int k = 0;
+    double x, y;
+    for (int i = 0; i < n; i++)
+    {
+       x = Double.Parse(Console.ReadLine());
+       y = Double.Parse(Console.ReadLine());
+       Console.WriteLine();
+       if (x >= 0 & x <= Math.PI & y >= 0 & y <= Math.Sin(x)) 
+       {
+           k++;
+       }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Точек, попавших в фигуру: " + k);
+#endregion
+
+#region 2.7
+    int n = Int32.Parse(Console.ReadLine());
+    Console.WriteLine();
+    int k1 = 0, k3 = 0;
+    double x, y;
+    for (int i = 0; i < n; i++)
+    {
+       x = Double.Parse(Console.ReadLine());
+       y = Double.Parse(Console.ReadLine());
+       if (x == 0 & y == 0)
+       {
+           Console.WriteLine("Начало координат");
+           k1++;
+           k3++;
+       } 
+       else if (x == 0 & y > 0)
+       {
+           Console.WriteLine("1, 2 квадранты");
+           k1++;
+       }
+       else if (x == 0 & y < 0)
+       {
+           Console.WriteLine("3, 4 квадранты");
+           k3++;
+       }
+       else if (x > 0 & y == 0)
+       {
+           Console.WriteLine("1, 4 квадранты");
+           k1++;
+       }
+       else if (x < 0 & y == 0)
+       {
+           Console.WriteLine("2, 3 квадранты");
+           k3++;
+       }
+       else if (x > 0 & y > 0)
+       {
+           Console.WriteLine("1 квадрант");
+           k1++;
+       }
+       else if (x < 0 & y > 0)
+       {
+           Console.WriteLine("2 квадрант");
+       }
+       else if (x < 0 & y < 0)
+       {
+           Console.WriteLine("3 квадрант");
+           k3++;
+       }
+       else if (x > 0 & y < 0)
+       {
+           Console.WriteLine("4 квадрант");
+       }
+       Console.WriteLine();
+
+    }
+    Console.WriteLine();
+    Console.WriteLine("Точек в 1 квадранте: " + k1);
+    Console.WriteLine("Точек в 3 квадранте: " + k3);
+#endregion
+
+#region 2.8
+    int n = Int32.Parse(Console.ReadLine());
+    Console.WriteLine();
+    int num = 0;
+    double x, y, pos, min = Math.Pow(10, 100);
+    for (int i = 1; i <= n; i++)
+    {
+        x = Double.Parse(Console.ReadLine());
+        y = Double.Parse(Console.ReadLine());
+        Console.WriteLine();
+        pos = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+        if (pos < min)
+        {
+            min = pos;
+            num = i;
+        }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Номер ближайшей точки: " + num);
+    Console.WriteLine("Расстояние до ближайшей точки: " min);
+#endregion
+
+#region 2.9
+    int n = Int32.Parse(Console.ReadLine());
+    Console.WriteLine();
+    double res, min = Math.Pow(10, 100);
+    for (int i = 1; i <= n; i++)
+    {
+        res = Double.Parse(Console.ReadLine());
+        if (res < min){
+            min = res;
+        }
+    }
+    Console.WriteLine();
+    Console.WriteLine("Лучший результат: " + min);
+#endregion
+
+
