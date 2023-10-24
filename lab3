@@ -1,0 +1,981 @@
+
+using System;
+class HelloWorld
+{
+    static void Main()
+    {
+        #region 1_1
+        double[] a = new double[6];
+        double sum = 0, elm = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            elm = Double.Parse(Console.ReadLine());
+            a[i] = elm;
+            sum += elm;
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            a[i] /= sum;
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            Console.Write(Math.Round(a[i], 6) + " ");
+        }
+        #endregion
+
+        #region 1_2
+        a = new double[8];
+        double k = 0;
+	c = 0;
+        sum = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            if (a[i] > 0)
+            {
+                sum += a[i];
+                k++;
+            }
+        }
+        c = sum / k;
+        for (int i = 0; i < 8; i++)
+        {
+            if (a[i] > 0) a[i] = c;
+        }
+        for (int i = 0; i < 8; i++)
+        {
+            Console.Write(Math.Round(a[i], 6) + " ");
+        }
+        #endregion
+
+        #region 1_3
+        double[] a1 = new double[4];
+        double[] a2 = new double[4];
+        double[] s = new double[4];
+        double[] r = new double[4];
+        for (int i = 0; i < 4; i++)
+        {
+            a1[i] = Double.Parse(Console.ReadLine());
+        }
+        Console.WriteLine();
+        for (int i = 0; i < 4; i++)
+        {
+            a2[i] = Double.Parse(Console.ReadLine());
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            s[i] = a1[i] + a2[i];
+            r[i] = a1[i] - a2[i];
+        }
+        Console.Write("s: ");
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write(s[i] + " ");
+        }
+        Console.WriteLine();
+        Console.Write("r: ");
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write(r[i] + " ");
+        }
+        #endregion
+
+        #region 1_4
+        a = new double[5];
+        c = 0;
+        sum = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            sum += a[i];
+        }
+        c = sum / 5;
+        Console.WriteLine();
+        for (int i = 0; i < 5; i++)
+        {
+            a[i] -= c;
+            Console.Write(a[i] + " ");
+        }
+        #endregion
+
+        #region 1_5
+        a1 = new double[4];
+        a2 = new double[4];
+        sum = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            a1[i] = Double.Parse(Console.ReadLine());
+        }
+        Console.WriteLine();
+        for (int i = 0; i < 4; i++)
+        {
+            a2[i] = Double.Parse(Console.ReadLine());
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            sum += a1[i] * a2[i];
+        }
+        Console.WriteLine();
+        Console.WriteLine(sum);
+        #endregion
+
+        #region 1_6
+        a = new double[5];
+        sum = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            sum += Math.Pow(a[i], 2);
+        }
+        Console.WriteLine();
+        Console.WriteLine(Math.Sqrt(sum));
+        #endregion
+
+        #region 1_7
+        a = new double[7];
+        c = 0;
+        sum = 0;
+        for (int i = 0; i < 7; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            sum += a[i];
+        }
+        c = sum / 7;
+        Console.WriteLine();
+        for (int i = 0; i < 7; i++)
+        {
+            if (a[i] > c) a[i] = 0;
+            Console.Write(a[i] + " ");
+        }
+        #endregion
+
+        #region 1_8
+        a = new double[6];
+        k = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            if (a[i] < 0) k++;
+        }
+        Console.WriteLine();
+        Console.WriteLine(k);
+        #endregion
+
+        #region 1_9
+        a = new double[8];
+	c = 0;
+        k = 0;
+        sum = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            sum += a[i];
+        }
+        c = sum / 8;
+        for (int i = 0; i < 8; i++)
+        {
+            if (a[i] > c) k++;
+        }
+        Console.WriteLine();
+        Console.WriteLine(k);
+
+        Console.ReadKey();
+        #endregion
+
+        #region 1_10
+	a = new double[10];
+        k = 0;
+        double p, q;
+        for (int i = 0; i < 10; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+        }
+        Console.WriteLine();
+        p = Double.Parse(Console.ReadLine());
+        q = Double.Parse(Console.ReadLine());
+        Console.WriteLine();
+        for (int i = 0; i < 10; i++)
+        {
+            if (a[i] > p & a[i] < q) k++;
+        }
+        Console.WriteLine();
+        Console.WriteLine(k);
+        #endregion
+
+        #region 1_11
+	a = new double[10];
+        int l = 0, j = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            if (a[i] > 0) l++;
+        }
+        double[] b = new double[l];
+        Console.WriteLine();
+        for (int i = 0; i < 10; i++)
+        {
+            if (a[i] > 0)
+            {
+                b[j] = a[i];
+                Console.Write(b[j] + " ");
+                j++;
+            }
+        }
+        #endregion
+
+        #region 1_12
+	a = new double[8];
+        n = -1;
+        double e = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+            if (a[i] < 0)
+            {
+                n = i + 1;
+                e = a[i];
+            }
+        }
+        Console.WriteLine();
+        Console.WriteLine(e + ", №" + n);
+        #endregion
+
+        #region 1_13
+	a = new double[10];
+        a1 = new double[5];
+        a2 = new double[5];
+        for (int i = 0; i < 10; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+        }
+        Console.WriteLine();
+        for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0) a1[i / 2] = a[i];
+            else a2[(i - 1) / 2] = a[i];
+        }
+        Console.Write("1) ");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write(a1[i] + " ");
+        }
+        Console.WriteLine();
+        Console.Write("2) ");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write(a2[i] + " ");
+        }
+        #endregion
+
+        #region 1_14
+	a = new double[11];
+        sum = 0;
+        for (int i = 0; i < 11; i++)
+        {
+            a[i] = Double.Parse(Console.ReadLine());
+        }
+        for (int i = 0; i < 11; i++)
+        {
+            if (a[i] >= 0) sum += Math.Pow(a[i], 2);
+            else break;
+        }
+        Console.WriteLine();
+        Console.WriteLine(sum);
+        #endregion
+
+        #region 1_15
+	double[] x = new double[10];
+        double[] y = new double[10];
+        for (int i = 0; i < 10; i++)
+        {
+            x[i] = double.Parse(Console.ReadLine());
+            y[i] = Math.Round(0.5 * Math.Log(x[i]), 6);
+
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(x[i] + " " + y[i]);
+        }
+        #endregion
+
+	#region 2_1
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        double min = Math.Pow(10, 100);
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] < min) min = a[i];
+        }
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] == min)
+            {
+                a[i] *= 2;
+            }
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_2
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        double max = Math.Pow(10, 100) * -1, sum = 0;
+        int index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                index = i;
+            }
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if (i < index) sum += a[i];
+        }
+        Console.WriteLine("Сумма: " + sum);
+    	#endregion
+
+	#region 2_3
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        min = Math.Pow(10, 100);
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] < min)
+            {
+                min = a[i];
+                index = i;
+            }
+        }
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            if (i < index) a[i] *= 2;
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_4
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = Math.Pow(10, 100) * -1;
+	sum = 0;
+        c = 0;
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            sum += a[i];
+            if (a[i] > max)
+            {
+                max = a[i];
+                index = i;
+            }
+        }
+        c = Math.Round(sum / n, 6);
+        Console.WriteLine("Результат : ");
+        for (int i = 0; i < n; i++)
+        {
+            if (i > index) a[i] = c;
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_5
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = Math.Pow(10, 100) * -1;
+	min = Math.Pow(10, 100);
+	sum = 0;
+        int i1 = -1, i2 = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            sum += a[i];
+            if (a[i] > max)
+            {
+                max = a[i];
+                i1 = i;
+            }
+            if (a[i] < min)
+            {
+                min = a[i];
+                i2 = i;
+            }
+        }
+        if (i1 > i2)
+        {
+            int d = i1;
+            i1 = i2;
+            i2 = d;
+        }
+        int t = 0;
+        for (int i = i1 + 1; i < i2; i++)
+        {
+            if (a[i] < 0) t++;
+        }
+        b = new double[t];
+        Console.WriteLine("Результат : ");
+        j = 0;
+        for (int i = i1 + 1; i < i2; i++)
+        {
+            if (a[i] < 0)
+            {
+                b[j] = a[i];
+                Console.Write(b[j] + " ");
+                j++;
+            }
+        }
+    	#endregion
+
+	#region 2_6
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        sum = 0;
+	c = 0;
+	min = Math.Pow(10, 100);
+        
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            sum += a[i];
+        }
+        c = sum / n;
+        Console.Write("Введите чисто P: ");
+        double p = double.Parse(Console.ReadLine());
+        for (int i = 0; i < n; i++)
+        {
+            q = Math.Abs(a[i] - c);
+            if (q < min)
+            {
+                min = q;
+                index = i;
+            }
+        }
+        double[] b = new double[n + 1];
+        for(int i = 0; i <= index; i++)
+        {
+            b[i] = a[i];
+        }
+        b[index + 1] = p;
+        for (int i = index + 2; i <= n; i++)
+        {
+            b[i] = a[i - 1];
+        }
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i <= n; i++)
+        {
+            Console.Write(b[i] + " ");
+        }
+    	#endregion
+
+	#region 2_7
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                index = i;
+            }
+        }
+        a[index + 1] *= 2;
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_8
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        min = Math.Pow(10, 100);
+        double tmp;   
+        i1 = -1;
+        i2 = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                i1 = i;
+            }
+        }
+        for (int i = i1 + 1; i < n; i++)
+        {
+            if (a[i] < min)
+            {
+                min = a[i];
+                i2 = i;
+            }
+        }
+        tmp = a[i1];
+        a[i1] = a[i2];
+        a[i2] = tmp;
+
+
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_9
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        min = Math.Pow(10, 100);
+        sum = 0;
+        i1 = -1;
+        i2 = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                i1 = i;
+            }
+            if (a[i] < min)
+            {
+                min = a[i];
+                i2 = i;
+            }
+        }
+        if (i1 > i2)
+        {
+            d = i1;
+            i1 = i2;
+            i2 = d;
+        }
+        for (int i = i1 + 1; i < i2; i++)
+        {
+            sum += a[i];
+        }
+        Console.Write("Результат: ");
+        Console.WriteLine(sum / (i2 - i1 - 1));
+    	#endregion
+
+	#region 2_10
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        min = Math.Pow(10, 100);
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > 0 & a[i] < min)
+            {
+                min = a[i];
+                index = i;
+            }
+        }
+        b = new double[n - 1];
+        for (int i = 0; i < index; i++)
+        {
+            b[i] = a[i];
+        }
+        for (int i = index; i < n - 1; i++)
+        {
+            b[i] = a[i + 1];
+        }
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n - 1; i++)
+        {
+            Console.Write(b[i] + " ");
+        }
+    	#endregion
+
+	#region 2_11
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > 0) index = i;
+        }
+        Console.Write("Введите чисто P: ");
+        p = double.Parse(Console.ReadLine());
+        b = new double[n + 1];
+        for (int i = 0; i <= index; i++)
+        {
+            b[i] = a[i];
+        }
+        b[index + 1] = p;
+        for (int i = index + 2; i <= n; i++)
+        {
+            b[i] = a[i - 1];
+        }
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i <= n; i++)
+        {
+            Console.Write(b[i] + " ");
+        }
+    	#endregion
+
+	#region 2_12
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        sum = 0;
+        i1 = -1;
+        i2 = -1;
+        bool flag = true;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                i1 = i;
+            }
+            if (a[i] < 0 & flag == true)
+            {
+                i2 = i;
+                flag = false;
+            }
+        }
+        for (int i = i1 + 1; i < n; i++)
+        {
+            sum += a[i];
+        }
+        a[i2] = sum / (n - i1 - 1);
+        Console.Write("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_13
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        sum = 0;
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max & i % 2 == 0)
+            {
+                max = a[i];
+                index = i;
+            }
+        }
+        a[index] = index;
+        Console.Write("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_14
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        tmp = 0;
+        i1 = -1;
+        i2 = -1;
+        flag = true;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                i1 = i;
+            }
+            if (a[i] < 0 & flag == true)
+            {
+                i2 = i;
+                flag = false;
+            }
+        }
+        tmp = a[i1];
+        a[i1] = a[i2];
+        a[i2] = tmp;
+        Console.Write("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_15
+	Console.Write("Введите количество элементов в массиве A: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        Console.WriteLine("Введите элементы массива A: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+        }
+        Console.Write("Введите количество элементов в массиве B: ");
+        int m = Int32.Parse(Console.ReadLine());
+        b = new double[m];
+        Console.WriteLine("Введите элементы массива B: ");
+        for (int i = 0; i < m; i++)
+        {
+            b[i] = double.Parse(Console.ReadLine());
+        }
+        Console.Write("Введите число k: ");
+        int kkk = Int32.Parse(Console.ReadLine());
+        double[] ab = new double[n + m];
+        for (int i = 0; i < kkk; i++)
+        {
+            ab[i] = a[i];
+        }
+        for (int i = kkk; i < m + kkk; i++)
+        {
+            ab[i] = b[i - kkk];
+        }
+        for (int i = m + kkk; i < n + m; i++)
+        {
+            ab[i] = a[i - m];
+        }
+        Console.Write("Результат: ");
+        for (int i = 0; i < n + m; i++)
+        {
+            Console.Write(ab[i] + " ");
+        }
+    	#endregion
+
+	#region 2_16
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        sum = 0;
+        c = 0;
+        t = 0;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            sum += a[i];
+        }
+        c = sum / n;
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] < c)
+            {
+                t++;
+            }
+        }
+        int[] ai = new int[t];
+        j = 0;
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] < c)
+            {
+                ai[j] = i;
+                Console.Write(ai[j] + " ");
+                j++;
+            }
+        }
+    	#endregion
+
+	#region 2_17
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        min = Math.Pow(10, 100);
+        double sum1 = 0, sum2 = 0;
+        c = 0;
+        i1 = -1;
+        i2 = -1;
+        int k1 = 0, k2 = 0;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            {
+                max = a[i];
+                i1 = i;
+            }
+            if (a[i] < min)
+            {
+                min = a[i];
+                i2 = i;
+            }
+            if (a[i] > 0)
+            {
+                sum1 += a[i];
+                k1++;
+            }
+            else if (a[i] < 0)
+            {
+                sum2 += a[i];
+                k2++;
+            }
+        }
+        for (int i = i1 + 1; i < n; i++)
+        {
+            if (a[i] < min)
+            {
+                min = a[i];
+                i2 = i;
+            }
+        }
+        if (i1 > i2)
+        {
+            c = sum1 / k1;
+        }
+        else
+        {
+            c = sum2 / k2;
+        }
+
+        Console.WriteLine("Результат: ");
+        Console.Write(c);
+    	#endregion
+
+	#region 2_18
+	Console.Write("Введите количество элементов в массиве: ");
+        int n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        double max1 = -1 * Math.Pow(10, 100), max2 = -1 * Math.Pow(10, 100);
+        int start, end;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (i % 2 == 0 & a[i] > max1) max1 = a[i];
+            if (i % 2 == 1 & a[i] > max2) max2 = a[i];
+        }
+        if (max1 > max2)
+        {
+            start = 0;
+            end = (n - n % 2) / 2;
+        }
+        else
+        {
+            start = (n - n % 2) / 2;
+            end = n;
+        }
+
+        for (int i = start; i < end; i++)
+        {
+            a[i] = 0;
+        }
+
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_19
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        sum = 0;
+        index = -1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            sum += a[i];
+            if (a[i] > max)
+            {
+                max = a[i];
+                index = i;
+            }
+        }
+        if (max > sum) a[index] = 0;
+        else a[index] *= 2;
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+    	#endregion
+
+	#region 2_20
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        min = Math.Pow(10, 100);
+        sum = 0;
+        i1 = -1;
+        i2 = -1;
+        start = -1;
+        flag = true;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] < min)
+            {
+                min = a[i];
+                i1 = i;
+            }
+            if (a[i] < 0 & flag == true)
+            {
+                i2 = i;
+                flag = false;
+            }
+        }
+        if (i2 < i1) start = 0;
+        else start = 1;
+        for (int i = start; i < n; i += 2)
+        {
+            sum += a[i];
+        }
+        Console.Write("Результат: ");
+        Console.Write(sum);
+    	#endregion
+
+	
+        Console.ReadKey();
+    }
+}
