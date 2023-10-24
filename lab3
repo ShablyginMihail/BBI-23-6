@@ -975,6 +975,65 @@ class HelloWorld
         Console.Write(sum);
     	#endregion
 
+	#region 3_2
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        sum = 0;
+        int km = 1;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            max = a[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] == max)
+            {
+                a[i] += km;
+                km++;
+            }
+        }
+
+        Console.Write("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+	#endregion
+	
+	#region 3_4
+	Console.Write("Введите количество элементов в массиве: ");
+        n = Int32.Parse(Console.ReadLine());
+        a = new double[n];
+        max = -1 * Math.Pow(10, 100);
+        sum = 0;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] > max)
+            max = a[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            sum += a[i];
+            if (a[i] == max)
+            {
+                a[i] = sum - a[i];
+            }
+        }
+
+        Console.Write("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+	#endregion
+
 	
         Console.ReadKey();
     }
