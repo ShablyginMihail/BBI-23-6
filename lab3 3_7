@@ -1,0 +1,25 @@
+Console.Write("Введите количество элементов в массиве: ");
+        int n = Int32.Parse(Console.ReadLine());
+        double[] a = new double[n];
+        double[] b = new double[n];
+        int j = 0;
+        Console.WriteLine("Введите элементы массива: ");
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = double.Parse(Console.ReadLine());
+            if (a[i] >= 0)
+            {
+                b[j] = a[i];
+                j++;
+            }   
+        }
+        Console.WriteLine("Результат: ");
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine(b[i]);
+            if (a[i] < 0)
+            {
+                b[j] = a[i];
+                j++;
+            }
+        }
