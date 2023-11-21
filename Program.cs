@@ -396,77 +396,82 @@ class HelloWorld
 
         #region 3_3
         int n = Int32.Parse(Console.ReadLine());
-        double[,] a = new double[n, n];
-        double[] b = new double[2 * n - 1];
-        double sum = 0;
-        Console.WriteLine();
-        for (int i = 0; i < n; i++)
+        if (n > 0)
         {
-            for (int j = 0; j < n; j++)
+            double[,] a = new double[n, n];
+            double[] b = new double[2 * n - 1];
+            double sum = 0;
+            Console.WriteLine();
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("[" + i + "," + j + "]");
-                a[i, j] = Double.Parse(Console.ReadLine());
+                for (int j = 0; j < n; j++)
+                {
+                    Console.WriteLine("[" + i + "," + j + "]");
+                    a[i, j] = Double.Parse(Console.ReadLine());
+                }
+                Console.WriteLine();
             }
             Console.WriteLine();
-        }
-        Console.WriteLine();
-        int index = 0;
-        for (int i = n - 1; i > -1; i--)
-        {
-            for (int j = 0; j < n - i; j++)
+            int index = 0;
+            for (int i = n - 1; i > -1; i--)
             {
-                sum += a[i + j, j];
+                for (int j = 0; j < n - i; j++)
+                {
+                    sum += a[i + j, j];
+                }
+                b[index] = sum;
+                index++;
+                sum = 0;
             }
-            b[index] = sum;
-            index++;
-            sum = 0;
-        }
-        for (int j = 1; j < n; j++)
-        {
-            for (int i = 0; i < n - j; i++)
+            for (int j = 1; j < n; j++)
             {
-                sum += a[i, j + i];
+                for (int i = 0; i < n - j; i++)
+                {
+                    sum += a[i, j + i];
+                }
+                b[index] = sum;
+                index++;
+                sum = 0;
             }
-            b[index] = sum;
-            index++;
-            sum = 0;
-        }
-        for (int i = 0; i < 2 * n - 1; i++)
-        {
-            Console.Write(b[i] + " ");
+            for (int i = 0; i < 2 * n - 1; i++)
+            {
+                Console.Write(b[i] + " ");
+            }
         }
         #endregion
 
         #region 3_4
         int n = Int32.Parse(Console.ReadLine());
-        double[,] a = new double[n, n];
-        double[] b = new double[2 * n - 1];
-        double sum = 0;
-        Console.WriteLine();
-        for (int i = 0; i < n; i++)
+        if (n > 0)
         {
-            for (int j = 0; j < n; j++)
+            double[,] a = new double[n, n];
+            double sum = 0;
+            Console.WriteLine();
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("[" + i + "," + j + "]");
-                a[i, j] = Double.Parse(Console.ReadLine());
+                for (int j = 0; j < n; j++)
+                {
+                    Console.WriteLine("[" + i + "," + j + "]");
+                    a[i, j] = Double.Parse(Console.ReadLine());
+                }
+                Console.WriteLine();
             }
             Console.WriteLine();
-        }
-        Console.WriteLine();
-        for (int i = n - 1; i > n / 2 - 1; i--)
-        {
-            for (int j = 0; j < i + 1; j++)
+            for (int i = n - 1; i > n / 2 - 1; i--)
             {
-                a[i, j] = 1;
+                for (int j = 0; j < i + 1; j++)
+                {
+                    a[i, j] = 1;
+                }
             }
-        }
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            for (int i = 0; i < n; i++)
             {
-                Console.Write(a[i, j] + " ");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(a[i, j] + " ");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
         #endregion
 
