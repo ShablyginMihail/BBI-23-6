@@ -6,7 +6,6 @@ namespace lab
     {
         private string _name;
         private string _surname;
-        private int[] _grades;
         private double _average;
         private bool _banned;
         public double Average { get { return _average; } }
@@ -25,7 +24,6 @@ namespace lab
                 if (grades[i] == 2) _banned = true;
             }
             _average = Math.Round(_average / 3, 2);
-            _grades = grades;
         }
 
         public void PrintResult(string text = "Некорректная информация")
@@ -72,7 +70,7 @@ namespace lab
             private int _totalScore;
             private int _delta;
             public string Name { get { return _name; } }
-            public int Score { get { return _totalScore; } set {_totalScore = value; } } 
+            public int Score { get { return _totalScore; } set { _totalScore = value; } }
             public int Delta { get { return _delta; } set { _delta = value; } }
 
             public Team(string name)
@@ -81,10 +79,22 @@ namespace lab
                 _totalScore = 0;
                 _delta = 0;
             }
-
             public void Print()
             {
                 Console.WriteLine(_name + ", " + _totalScore + " очков");
+            }
+            public void Win(int delta)
+            {
+                _totalScore += 3;
+                _delta += delta;
+            }
+            public void Lose(int delta)
+            {
+                _delta -= delta;
+            }
+            public void Draw()
+            {
+                _totalScore += 1;
             }
 
         }
@@ -98,6 +108,27 @@ namespace lab
             }
             return grade;
         }
+        static void Match(ref Team team1, ref Team team2, int score1, int score2)
+        {
+            Console.WriteLine(team1.Name + " - " + team2.Name + " " + score1 + ":" + score2);
+            int delta = Math.Abs(score1 - score2);
+            if (score1 > score2)
+            {
+                team1.Win(delta);
+                team2.Lose(delta);
+            }
+            else if (score1 < score2)
+            {
+                team2.Win(delta);
+                team1.Lose(delta);
+            }
+            else
+            {
+                team1.Draw();
+                team2.Draw();
+            }
+        }
+
         static void Main()
         {
             #region 1.4
@@ -180,55 +211,38 @@ namespace lab
             #endregion
 
             #region 3.5
-            //Team[] teams = new Team[4];
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    teams[i] = new Team("Команда " + (i + 1));
-            //}
-            //Random random = new Random();
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    for (int j = i+1; j < 4; j++)
-            //    {
-            //        int score1 = random.Next(0, 5);
-            //        int score2 = random.Next(0, 5);
-            //        Console.WriteLine(teams[i].Name + " - " + teams[j].Name + " " + score1 + ":" + score2);
-            //        int delta = Math.Abs(score1 - score2);
-            //        if (score1 > score2)
-            //        {
-            //            teams[i].Score += 3;
-            //            teams[i].Delta += delta;
-            //            teams[j].Delta -= delta;
-            //        }
-            //        else if (score1 < score2)
-            //        {
-            //            teams[j].Score += 3;
-            //            teams[j].Delta += delta;
-            //            teams[i].Delta -= delta;
-            //        }
-            //        else
-            //        {
-            //            teams[i].Score += 1;
-            //            teams[j].Score += 1;
-            //        }
-            //    }
-            //}
-            //Team tmp;
-            //for (int i = 1; i < 4; i++)
-            //{
-            //    for (int j = i; j > 0 && ((teams[j].Score > teams[j - 1].Score) || (teams[j].Score == teams[j - 1].Score && teams[j].Delta > teams[j - 1].Delta)); j--)
-            //    {
-            //        tmp = teams[j];
-            //        teams[j] = teams[j - 1];
-            //        teams[j - 1] = tmp;
-            //    }
-            //}
-            //Console.WriteLine();
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    Console.Write((i+1) + " место - ");
-            //    teams[i].Print();
-            //}
+            Team[] teams = new Team[4];
+            for (int i = 0; i < 4; i++)
+            {
+                teams[i] = new Team("Команда " + (i + 1));
+            }
+            Random random = new Random();
+            int score1, score2;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = i + 1; j < 4; j++)
+                {
+                    score1 = random.Next(0, 5);
+                    score2 = random.Next(0, 5);
+                    Match(ref teams[i], ref teams[j], score1, score2);
+                }
+            }
+            Team tmp;
+            for (int i = 1; i < 4; i++)
+            {
+                for (int j = i; j > 0 && ((teams[j].Score > teams[j - 1].Score) || (teams[j].Score == teams[j - 1].Score && teams[j].Delta > teams[j - 1].Delta)); j--)
+                {
+                    tmp = teams[j];
+                    teams[j] = teams[j - 1];
+                    teams[j - 1] = tmp;
+                }
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write((i + 1) + " место - ");
+                teams[i].Print();
+            }
             #endregion
 
             Console.ReadKey();
