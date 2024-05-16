@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "EGxxaTot8N76pcYh4LSBfQ/GYyPXeL+QNf/uy8b/cNsll6Z8N4o2LCIYcgwVS3Gn5OUuhzyZXgXD8Uduv/YrLw==",
+  "success": true,
+  "projectFilePath": "/Users/mshablygin/Projects/Lab9_1/Lab9_1/Lab9_1.csproj",
+  "expectedPackageFiles": [
+    "/Users/mshablygin/.nuget/packages/protobuf-net/3.2.30/protobuf-net.3.2.30.nupkg.sha512",
+    "/Users/mshablygin/.nuget/packages/protobuf-net.core/3.2.30/protobuf-net.core.3.2.30.nupkg.sha512",
+    "/Users/mshablygin/.nuget/packages/system.collections.immutable/7.0.0/system.collections.immutable.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
