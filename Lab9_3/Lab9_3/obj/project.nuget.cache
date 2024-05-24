@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sINKTXSX3TMlkqHdk3DKO3oQOQ5aY2zX9Q6M7fqFedsVhYSjuT65sBBWye32RW34Xx7/inPKrk+WjtovE+VQqA==",
+  "dgSpecHash": "4sIFF+RZ6LWCYyaxIpl5BI211pBUIuRV5bvV1NlhiG6lLbV+rLR6FYWbrL+rnp+EQ+QRM2Qj0OISMevl+DOZ/A==",
   "success": true,
-  "projectFilePath": "/Users/mshablygin/Projects/Lab9_3/Lab9_3/Lab9_3.csproj",
+  "projectFilePath": "/Users/mshablygin/Projects/Lab9/Lab9_3/Lab9_3/Lab9_3.csproj",
   "expectedPackageFiles": [
     "/Users/mshablygin/.nuget/packages/protobuf-net/3.2.30/protobuf-net.3.2.30.nupkg.sha512",
     "/Users/mshablygin/.nuget/packages/protobuf-net.core/3.2.30/protobuf-net.core.3.2.30.nupkg.sha512",

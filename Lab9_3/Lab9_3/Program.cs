@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using ProtoBuf;
 using Lab9_3.Serializers;
 using System.Xml.Serialization;
+using System.Drawing;
 
 namespace lab
 {
@@ -247,10 +248,18 @@ namespace lab
     [Serializable]
     public class ManTeam : Team
     {
+        protected string _league;
+        [ProtoMember(15)]
+        public string League
+        {
+            get => _league;
+            set => _league = value ?? string.Empty;
+        }
         public ManTeam() : base() { }
-        public ManTeam(string name) : base(name)
+        public ManTeam(string name, string league) : base(name)
         {
             _name = "Man " + name;
+            _league = league;
         }
     }
 
@@ -258,10 +267,18 @@ namespace lab
     [Serializable]
     public class WomanTeam : Team
     {
+        protected string _color;
+        [ProtoMember(16)]
+        public string Colour
+        {
+            get => _color;
+            set => _color = value ?? string.Empty;
+        }
         public WomanTeam() : base() { }
-        public WomanTeam(string name) : base(name)
+        public WomanTeam(string name, string color) : base(name)
         {
             _name = "Woman " + name;
+            _color = color;
         }
 
     }
@@ -324,12 +341,20 @@ namespace lab
             #region 3.5
             Team[] teams = new Team[8];
             ManTeam[] man_teams = new ManTeam[4];
+            string[] leagues =
+            {
+                "3rd", "2nd", "1st", "Premiere"
+            };
             WomanTeam[] woman_teams = new WomanTeam[4];
+            string[] colors =
+            {
+                "red", "green", "blue", "white"
+            };
             Random random = new Random();
             int score1, score2;
             for (int i = 0; i < 4; i++)
             {
-                man_teams[i] = new ManTeam("Team " + (i + 1));
+                man_teams[i] = new ManTeam("Team " + (i + 1), leagues[i]);
             }
 
             for (int i = 0; i < 4; i++)
@@ -344,7 +369,7 @@ namespace lab
             Console.WriteLine();
             for (int i = 0; i < 4; i++)
             {
-                woman_teams[i] = new WomanTeam("Team " + (i + 1));
+                woman_teams[i] = new WomanTeam("Team " + (i + 1), colors[i]);
             }
             for (int i = 0; i < 4; i++)
             {
@@ -366,14 +391,23 @@ namespace lab
             }
             Team.QuickSort(teams, 0, teams.Length - 1);
 
-            string folder_3 = "Teams";
+            string folder_3 = "ManTeams";
+            string folder_4 = "WomanTeams";
             string path_3 = Path.Combine(path, folder_3);
+            string path_4 = Path.Combine(path, folder_4);
             if (!Directory.Exists(path_3)) Directory.CreateDirectory(path_3);
-            string[] files_3 = new string[]
+            if (!Directory.Exists(path_4)) Directory.CreateDirectory(path_4);
+            string[] files_3_1 = new string[]
             {
-                "teams.json",
-                "teams.xml",
-                "teams.bin"
+                "manteams.json",
+                "manteams.xml",
+                "manteams.bin"
+            };
+            string[] files_3_2 = new string[]
+            {
+                "womanteams.json",
+                "womanteams.xml",
+                "womanteams.bin"
             };
             #endregion
 
@@ -381,15 +415,21 @@ namespace lab
 
             for (int i = 0; i < serializers.Length; i++)
             {
-                serializers[i].Write<ManTeam[]>(man_teams, Path.Combine(path_3, files_3[i]));
+                serializers[i].Write<ManTeam[]>(man_teams, Path.Combine(path_3, files_3_1[i]));
+                serializers[i].Write<WomanTeam[]>(woman_teams, Path.Combine(path_4, files_3_2[i]));
                 //serializers[i].Write(students, Path.Combine(path_2, files_2[i]));
                 //serializers[i].Write(teams, Path.Combine(path_3, files_3[i]));
-                
+
             }
             for (int i = 0; i < serializers.Length; i++)
             {
-                man_teams = serializers[i].Read<ManTeam[]>(Path.Combine(path_3, files_3[i]));
+                man_teams = serializers[i].Read<ManTeam[]>(Path.Combine(path_3, files_3_1[i]));
                 foreach (Team team in man_teams)
+                {
+                    team.Print();
+                }
+                woman_teams = serializers[i].Read<WomanTeam[]>(Path.Combine(path_4, files_3_2[i]));
+                foreach (Team team in woman_teams)
                 {
                     team.Print();
                 }
